@@ -1,0 +1,15 @@
+<div class="card-detail">
+  <div *ngIf="product">
+    <h2>{{product.name | uppercase}} Detalhes</h2>
+    <div><span>ID:</span>{{product.id}}</div>
+    <div>
+      <label for="product-name">Nome do Produto: </label>
+      <input id="product-name" [(ngModel)]="product.name" placeholder="Digite o nome do produto" />
+<br/>
+      <label for="product-price">Preço do Produto: </label>
+      <input id="product-price" [(ngModel)]="product.price" type="number" placeholder="Digite o preço" />
+    </div>
+    <button class="back" (click)="goBack()">Cancelar</button>
+    <button class="save" (click)="save()">Salvar</button>
+  </div>
+</div>

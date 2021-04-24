@@ -1,0 +1,29 @@
+<app-product-search></app-product-search>
+<div class="content-product">
+  <div>
+    <label id="new-product">Nome do Produto: </label>
+    <input for="new-product" #productName required/>
+    
+    
+
+
+    <button class="add-button" (click)="add(productName.value); productName.value=''">
+      Cadastrar Produto
+    </button>
+  </div>
+
+  <ul class="products">
+    <li *ngFor="let product of products">
+      <a routerLink="/detail/{{product.id}}">
+        <span class="badge">{{product.id}}</span> {{product.name}}
+        
+      </a>
+
+      <span>Valor: {{product.price | number : '1.2-2'}}</span>
+
+      <button class="delete" title="delete product" (click)="delete(product)"><img
+          src="../../assets/lata-de-lixo.svg"></button>
+    </li>
+  </ul>
+
+</div>
